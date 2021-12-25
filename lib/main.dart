@@ -12,15 +12,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),
-      home: InputEmail().build(context),
+      home: InputFields().build(context),
     );
   }
 }
 
 // logo ekleyebiliriz
 
-class InputEmail {
-
+class InputFields {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
@@ -37,6 +36,19 @@ class InputEmail {
         ),
       ),
     );
-
   }
+  final inputPassword = Padding(
+    padding: EdgeInsets.only(bottom: 20),
+    child: TextField(
+      keyboardType: TextInputType.text,
+      obscureText: true,
+      decoration: InputDecoration(
+          hintText: 'Password',
+          contentPadding: EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+          border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(50.0)
+          )
+      ),
+    ),
+  );
 }
