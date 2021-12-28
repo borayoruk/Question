@@ -22,33 +22,38 @@ class MyApp extends StatelessWidget {
 class InputFields {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Padding(
-          padding:
-          EdgeInsetsDirectional.fromSTEB(
-            54,45,54,80
+    return Scaffold(
+      body: Column(
+        children: [
+          Container(
+            child: Padding(
+              padding:
+              EdgeInsetsDirectional.fromSTEB( 55,250,55,0 ),
+              child: TextField(
+                style: TextStyle(fontSize: 18),
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(
+                    hintText: 'Enter your email here'
+                ),
+              ),
+            )
           ),
-            child: TextField(
-              style: TextStyle(fontSize: 18),
-            keyboardType: TextInputType.emailAddress,
+          Container(
+            child: Padding(
+              padding:
+              EdgeInsetsDirectional.fromSTEB( 55,50,55,0 ),
+              child: TextField(
+                style: TextStyle(fontSize: 18),
+                keyboardType: TextInputType.number,
+                obscureText: true,
+                decoration: InputDecoration(
+                    hintText: 'Enter your number password'
+                ),
+              ),
+            )
           ),
-        ),
-      ),
+        ],
+      )
     );
   }
-  final inputPassword = Padding(
-    padding: EdgeInsets.only(bottom: 20),
-    child: TextField(
-      keyboardType: TextInputType.text,
-      obscureText: true,
-      decoration: InputDecoration(
-          hintText: 'Password',
-          contentPadding: EdgeInsets.symmetric(horizontal: 25, vertical: 20),
-          border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(50.0)
-          )
-      ),
-    ),
-  );
 }
