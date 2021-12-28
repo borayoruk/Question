@@ -26,9 +26,9 @@ class InputFields {
       body: Column(
         children: [
           Container(
-            child: Padding(
+            child: const Padding(
               padding:
-              EdgeInsetsDirectional.fromSTEB( 55,250,55,0 ),
+              EdgeInsetsDirectional.fromSTEB( 55,270,55,0 ),
               child: TextField(
                 style: TextStyle(fontSize: 18),
                 keyboardType: TextInputType.emailAddress,
@@ -39,9 +39,9 @@ class InputFields {
             )
           ),
           Container(
-            child: Padding(
+            child: const Padding(
               padding:
-              EdgeInsetsDirectional.fromSTEB( 55,50,55,0 ),
+              EdgeInsetsDirectional.fromSTEB( 55,70,55,0 ),
               child: TextField(
                 style: TextStyle(fontSize: 18),
                 keyboardType: TextInputType.number,
