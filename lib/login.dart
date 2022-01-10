@@ -16,10 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
-      ),
-      home: InputFields().build(context),
+      home: Login(),
     );
   }
 }
@@ -35,10 +32,7 @@ class InputFields extends State<Login>{
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
- // final My_app main = My_app();
-
   AuthService authService = AuthService();
-
 
   @override
   Widget build (BuildContext context) {
@@ -46,27 +40,29 @@ class InputFields extends State<Login>{
         body: Column(
           children: [
           Container( // email
-            child: const Padding(
+            child: Padding(
               padding:
-              EdgeInsetsDirectional.fromSTEB( 55,220,55,70 ),
+              const EdgeInsetsDirectional.fromSTEB( 55,220,55,70 ),
               child: TextField(
-                style: TextStyle(fontSize: 18),
+                controller: emailController,
+                style: const TextStyle(fontSize: 18),
                 keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     hintText: 'Enter your email here'
                 ),
               ),
             )
           ),
           Container( // password
-            child: const Padding(
+            child: Padding(
               padding:
-              EdgeInsetsDirectional.fromSTEB( 55,0,55,40 ),
+              const EdgeInsetsDirectional.fromSTEB( 55,0,55,40 ),
               child: TextField(
-                style: TextStyle(fontSize: 18),
+                controller: passwordController,
+                style: const TextStyle(fontSize: 18),
                 keyboardType: TextInputType.number,
                 obscureText: true,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     hintText: 'Enter your number password'
                 ),
               ),
@@ -75,23 +71,20 @@ class InputFields extends State<Login>{
           Container( // login buton
               child: Padding(
                 padding:
-                EdgeInsetsDirectional.fromSTEB( 55,0,55,0 ),
+                const EdgeInsetsDirectional.fromSTEB( 55,0,55,0 ),
                 child: ElevatedButton(
                   onPressed: () async {
-                    await authService.signIn(emailController.text, passwordController.text)
-                        .then((value)
+                    await authService.signIn(emailController.text, passwordController.text).then((value)
                     {
-                      authService.signIn(emailController.text, passwordController.text).then((value) {
                         return Navigator.push(context, MaterialPageRoute(
-                          builder: (context) => QuestionScreen())); // sign in olunca question screen e gidiyo
-                        });
+                          builder: (context) => Question())); // sign in olunca question screen e gidiyo
                     });
                   },
                   child:
                   ButtonTheme(
                     minWidth: 250,
                     height: 250,
-                    child: Text('Login'),
+                    child: const Text('Login'),
                   ),
                 ),
               )

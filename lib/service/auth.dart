@@ -15,16 +15,6 @@ class AuthService{
     return await auth.signOut();
   }
 
-  Future<User?> createPerson(String name, String email, String password) async{
-    var user = await auth.createUserWithEmailAndPassword(email: email, password: password);
-    await firestore
-        .collection("Person")
-        .doc(user.user?.uid)
-        .set({
-          'userName' : name,
-          'email' : email
-        });
-    return user.user;
-  }
+ //
 
 }
