@@ -1,59 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:question/login.dart';
 
-void main() {
+MyApp myApp = MyApp();
+
+void main() async{
+  // bu maini kullanmayacağım
+  // loginle gideceğim
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class My_app extends StatelessWidget {
+  // final Future<FirebaseApp> initialization = Firebase.initializeApp();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),
-      home: InputFields().build(context),
-    );
-  }
-}
-
-// logo ekleyebiliriz
-
-class InputFields {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          Container(
-            child: const Padding(
-              padding:
-              EdgeInsetsDirectional.fromSTEB( 55,270,55,0 ),
-              child: TextField(
-                style: TextStyle(fontSize: 18),
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                    hintText: 'Enter your email here'
-                ),
-              ),
-            )
-          ),
-          Container(
-            child: const Padding(
-              padding:
-              EdgeInsetsDirectional.fromSTEB( 55,70,55,0 ),
-              child: TextField(
-                style: TextStyle(fontSize: 18),
-                keyboardType: TextInputType.number,
-                obscureText: true,
-                decoration: InputDecoration(
-                    hintText: 'Enter your number password'
-                ),
-              ),
-            )
-          ),
-        ],
-      )
+      // home: My_app.build(context),
     );
   }
 }
