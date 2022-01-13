@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:question/contact.dart';
-import 'package:question/main.dart';
 import 'package:question/questionScreen.dart';
 import 'package:question/service/auth.dart';
 import 'package:firebase_core/firebase_core.dart';
