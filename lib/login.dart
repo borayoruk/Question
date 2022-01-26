@@ -37,10 +37,17 @@ class InputFields extends State<Login>{
     return Scaffold(
         body: Column(
           children: [
-          Container( // email
-            child: Padding(
+            Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB( 0,62,0,40 ), // start, TOP, end, BOTTOM
+              child: Image.asset(
+                'assets/questionMarkLogo.png',
+                width: 150,
+                height: 150,
+              ),
+            ),
+            Padding(
               padding:
-              const EdgeInsetsDirectional.fromSTEB( 55,220,55,70 ),
+              const EdgeInsetsDirectional.fromSTEB( 55,0,55,0 ),
               child: TextField(
                 controller: emailController,
                 style: const TextStyle(fontSize: 18),
@@ -49,44 +56,40 @@ class InputFields extends State<Login>{
                     hintText: 'Enter your email here'
                 ),
               ),
-            )
-          ),
-          Container( // password
-            child: Padding(
-              padding:
-              const EdgeInsetsDirectional.fromSTEB( 55,0,55,40 ),
-              child: TextField(
-                controller: passwordController,
-                style: const TextStyle(fontSize: 18),
-                keyboardType: TextInputType.number,
-                obscureText: true,
-                decoration: const InputDecoration(
-                    hintText: 'Enter your number password'
-                ),
+            ),
+          Padding(
+            padding:
+            const EdgeInsetsDirectional.fromSTEB( 55,35,55,45 ),
+            child: TextField(
+              controller: passwordController,
+              style: const TextStyle(fontSize: 18),
+              keyboardType: TextInputType.number,
+              obscureText: true,
+              decoration: const InputDecoration(
+                  hintText: 'Enter your number password'
               ),
-            )
+            ),
           ),
-          Container( // login buton
-              child: Padding(
-                padding:
-                const EdgeInsetsDirectional.fromSTEB( 55,0,55,0 ),
-                child: ElevatedButton(
-                  onPressed: () async {
-                    await authService.signIn(emailController.text, passwordController.text).then((value)
-                    {
-                        return Navigator.push(context, MaterialPageRoute(
-                          builder: (context) => Question())); // sign in olunca question screen e gidiyo
-                    });
-                  },
-                  child:
-                  ButtonTheme(
-                    minWidth: 250,
-                    height: 250,
-                    child: const Text('Login'),
-                  ),
-                ),
-              )
+          Padding(
+            padding:
+            const EdgeInsetsDirectional.fromSTEB( 55,0,55,0 ),
+            child: ElevatedButton(
+              onPressed: () async {
+                await authService.signIn(emailController.text, passwordController.text).then((value)
+                {
+                    return Navigator.push(context, MaterialPageRoute(
+                      builder: (context) => Question())); // sign in olunca question screen e gidiyo
+                });
+              },
+              child:
+              ButtonTheme(
+                minWidth: 500,
+                height: 500,
+                child: const Text('Login'),
+              ),
+            ),
           ),
+
         ],
       )
     );
