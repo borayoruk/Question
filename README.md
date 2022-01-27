@@ -1,7 +1,6 @@
 # question
 
-A new Flutter project.
-
+This project is for our mobile application development course's project
 ## Getting Started
 
 This project is a starting point for a Flutter application.
