@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:question/questionScreen.dart';
 import 'package:question/service/auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:question/service/googleSignIn.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -89,16 +91,16 @@ class InputFields extends State<Login>{
             ),
           ),
 
-            Expanded( // neden expandedin içine padding koymak gibi güzel bir fikir daha önce aklıma gelmedi :D
-              // yesss
+            Expanded(
               child: Padding(
                 padding:
                 const EdgeInsetsDirectional.fromSTEB( 80,20,80,260 ),
-                child: MaterialButton(
-                  onPressed: ()=> null,
-                  color: Colors.blue,
-                  textColor: Colors.white,
-                  child: const Text('Login and signup with Google'),
+                child: ElevatedButton.icon(
+                  icon: const FaIcon(FontAwesomeIcons.google),
+                  label: const Text('Signup with Google'),
+                  onPressed: () {
+                    //final provider = Provider.of(context, listen: false);
+                  },
                 ),
               ),
             )
