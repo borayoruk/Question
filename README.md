@@ -1,6 +1,6 @@
 # question
 
-This project is for our mobile application development course's project
+This project is for our mobile application development course's Flutter project
 ## Getting Started
 
 This project is a starting point for a Flutter application.
