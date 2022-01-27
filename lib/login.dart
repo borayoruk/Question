@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// logo ekleyebiliriz
 
 class Login extends StatefulWidget {
   @override
@@ -90,6 +89,19 @@ class InputFields extends State<Login>{
             ),
           ),
 
+            Expanded( // neden expandedin içine padding koymak gibi güzel bir fikir daha önce aklıma gelmedi :D
+              // yesss
+              child: Padding(
+                padding:
+                const EdgeInsetsDirectional.fromSTEB( 80,20,80,260 ),
+                child: MaterialButton(
+                  onPressed: ()=> null,
+                  color: Colors.blue,
+                  textColor: Colors.white,
+                  child: const Text('Login and signup with Google'),
+                ),
+              ),
+            )
         ],
       )
     );
