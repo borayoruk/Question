@@ -15,6 +15,4 @@ class AuthService{
     return await auth.signOut();
   }
 
- // kayıt olma eklenebilir
-
 }

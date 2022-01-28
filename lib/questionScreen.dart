@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'data.dart';
 
 void main() => runApp(const Question());
+// we got some external help on the code
 
 class Question extends StatelessWidget {
   const Question({Key? key}) : super(key: key);
@@ -38,12 +39,9 @@ class _QuestionPage extends State<QuestionPage> {
       showDialog(
         context: context,
         builder: (BuildContext context) {
-          // return object of type Dialog
           return AlertDialog(
               title:  const Text("Congratulations you have fisihed the test"),
-            //content: new Text("Alert Dialog body"),
             actions: <Widget>[
-              // usually buttons at the bottom of the dialog
               TextButton(
                 child: const Text("GO BACK"),
                 onPressed: () {
@@ -59,11 +57,9 @@ class _QuestionPage extends State<QuestionPage> {
         },
       );
     }
-    // alert dialog
 
     else {
       setState(() {
-        //butona basılınca ekranın tekrar oluşması gerekiyo bu yüzden setstate içinde yazdım
         test_1.getQuestionanswers() == chosenButton
           ? choice.add(right)
           : choice.add(wrong);
@@ -96,7 +92,7 @@ class _QuestionPage extends State<QuestionPage> {
         ),
         Wrap(
           children: choice,
-        ), // wrap taşmayı engelliyor
+        ),
         Expanded(
           flex: 1,
           child: Padding(
