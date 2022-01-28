@@ -39,7 +39,7 @@ class InputFields extends State<Login>{
         body: Column(
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB( 0,62,0,40 ), // start, TOP, end, BOTTOM
+              padding: const EdgeInsetsDirectional.fromSTEB( 0,62,0,40 ),
               child: Image.asset(
                 'assets/questionMarkLogo.png',
                 width: 150,
@@ -60,7 +60,7 @@ class InputFields extends State<Login>{
             ),
           Padding(
             padding:
-            const EdgeInsetsDirectional.fromSTEB( 55,35,55,45 ),
+            const EdgeInsetsDirectional.fromSTEB( 55,45,55,5 ),
             child: TextField(
               controller: passwordController,
               style: const TextStyle(fontSize: 18),
@@ -71,35 +71,36 @@ class InputFields extends State<Login>{
               ),
             ),
           ),
-          Padding(
-            padding:
-            const EdgeInsetsDirectional.fromSTEB( 55,0,55,0 ),
-            child: ElevatedButton(
-              onPressed: () async {
-                await authService.signIn(emailController.text, passwordController.text).then((value)
-                {
+          Expanded(
+            child: Padding(
+              padding:
+              const EdgeInsetsDirectional.fromSTEB( 55,75,55,80 ),
+              child: ElevatedButton(
+                onPressed: () async { // this piece of code is got from external help
+                  await authService.signIn(emailController.text, passwordController.text).then((value)
+                  {
                     return Navigator.push(context, MaterialPageRoute(
-                      builder: (context) => Question())); // sign in olunca question screen e gidiyo
-                });
-              },
-              child:
-              ButtonTheme(
-                minWidth: 500,
-                height: 500,
-                child: const Text('Login'),
+                        builder: (context) => const Question()));
+                  });
+                },
+                child:
+                ButtonTheme(
+                  child: const Text('Login'),
+                ),
               ),
             ),
           ),
 
+
             Expanded(
               child: Padding(
                 padding:
-                const EdgeInsetsDirectional.fromSTEB( 80,20,80,260 ),
+                const EdgeInsetsDirectional.fromSTEB( 80,0,80,150 ),
                 child: ElevatedButton.icon(
                   icon: const FaIcon(FontAwesomeIcons.google),
                   label: const Text('Signup with Google'),
                   onPressed: () {
-                    //final provider = Provider.of(context, listen: false);
+                    null; // not implemented
                   },
                 ),
               ),
