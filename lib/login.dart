@@ -38,6 +38,7 @@ class InputFields extends State<Login>{
     return Scaffold(
         body: Column(
           children: [
+
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB( 0,62,0,40 ),
               child: Image.asset(
@@ -46,6 +47,7 @@ class InputFields extends State<Login>{
                 height: 150,
               ),
             ),
+
             Padding(
               padding:
               const EdgeInsetsDirectional.fromSTEB( 55,0,55,0 ),
@@ -58,6 +60,7 @@ class InputFields extends State<Login>{
                 ),
               ),
             ),
+
           Padding(
             padding:
             const EdgeInsetsDirectional.fromSTEB( 55,45,55,5 ),
@@ -71,6 +74,7 @@ class InputFields extends State<Login>{
               ),
             ),
           ),
+
           Expanded(
             child: Padding(
               padding:
@@ -90,7 +94,6 @@ class InputFields extends State<Login>{
               ),
             ),
           ),
-
 
             Expanded(
               child: Padding(
