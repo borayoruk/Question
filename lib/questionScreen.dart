@@ -40,7 +40,7 @@ class _QuestionPage extends State<QuestionPage> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-              title:  const Text("Congratulations you have fisihed the test"),
+              title:  const Text("Congratulations you have finished the test"),
             actions: <Widget>[
               TextButton(
                 child: const Text("GO BACK"),
