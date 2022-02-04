@@ -7,8 +7,8 @@ class DataTest {
     Questions(QuestionText:"The capital city of Turkey is Istanbul ?", Questionanswers: false),
     Questions(QuestionText:"The international dialing code of Turkey is +90. ?", Questionanswers: true ),
     Questions(QuestionText:"Piri Reis drew the world map for the first time. ?", Questionanswers:  true),
-    Questions(QuestionText:"Atatürk'ün yurt gezilerinde (1935-1938) yılları arasında kullandığı trenin adı Karadumandır.", Questionanswers: false ),
-    Questions(QuestionText:"Türkiye'de e-devlet uygulaması 2010 tarihinde yürürlüğe girmiştir ?", Questionanswers: false  )
+    Questions(QuestionText:"The name of the train that Atatürk used during her country tours (1935-1938) is Beyaz Tren", Questionanswers: false ),
+    Questions(QuestionText:"The E-Devlet application in Turkey entered into force in 2010", Questionanswers: false  )
   ];
 
 
