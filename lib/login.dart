@@ -3,7 +3,6 @@ import 'package:question/questionScreen.dart';
 import 'package:question/service/auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:question/service/googleSignIn.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
